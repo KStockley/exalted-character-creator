@@ -1,6 +1,6 @@
 const React = require('react');
-const Creator = require('./CharCreator.jsx');
-const Menu = require('./Menu.jsx');
+// const Creator = require('./CharCreator.jsx');
+import Menu from './Menu.jsx';
 
 class App extends React.Component {
   constructor (props) {
@@ -17,26 +17,13 @@ class App extends React.Component {
   }
 
   render () {
-    switch(this.state.view) {
-      case 'menu':
-        return (
-          <div className="menu">
-            <Menu clickHandler={this.clickHandler} />
-          </div>
-        );
-      case 'character':
-        return (
-          <div className="creator">
-            <Creator />
-          </div>
-        );
-      default:
-        return (
-          <div>
-            Uh Oh
-          </div>
-        );
-    }
+    return (
+      <div className="menu">
+        { this.state.view === 'menu' &&
+          <Menu clickHandler={this.clickHandler} />
+        }
+      </div>
+    );
   }
 }
 

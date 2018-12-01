@@ -3,19 +3,21 @@
 //
 // three buttons each of which will change the main app view
 // via an onclick handler passed from App
+const PropTypes = require('prop-types');
+const React = require('react');
 
 const Menu = (props) => {
   return (
     <div className="menu">
-      <button className="new" type="button" value="new" onclick={props.clickHandler}>New</button>
-      <button className="load" type="button" value="load" onclick={props.clickHandler}>Load</button>
-      <button className="delete" type="button" value="delete" onclick={props.clickHandler}>Delete</button>
+      <button className="new" type="button" value="new" onClick={props.clickHandler}>New</button>
+      <button className="load" type="button" value="load" onClick={props.clickHandler}>Load</button>
+      <button className="delete" type="button" value="delete" onClick={props.clickHandler}>Delete</button>
     </div>
   );
 }
 
-Menu.PropTypes = {
+Menu.propTypes = {
   clickHandler: PropTypes.func.isRequired,
 };
 
-module.exports = { Menu };
+export default Menu;

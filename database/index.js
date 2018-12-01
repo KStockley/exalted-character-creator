@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { schema } = require('schema.js');
+const { schema } = require('./schema.js');
 
 const options = {
   useNewUrlParser: true,
