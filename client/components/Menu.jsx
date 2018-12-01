@@ -7,9 +7,9 @@
 const Menu = (props) => {
   return (
     <div className="menu">
-      <button className="new" type="button">New</button>
-      <button className="load" type="button">Load</button>
-      <button className="delete" type="button">Delete</button>
+      <button className="new" type="button" value="new" onclick={props.clickHandler}>New</button>
+      <button className="load" type="button" value="load" onclick={props.clickHandler}>Load</button>
+      <button className="delete" type="button" value="delete" onclick={props.clickHandler}>Delete</button>
     </div>
   );
 }

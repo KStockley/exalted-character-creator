@@ -12,7 +12,8 @@ class App extends React.Component {
   }
 
   clickHandler (event) {
-    // function to change views when a menu button is clicked
+    const view = event.target.value;
+    this.setState({ view: view });
   }
 
   render () {
