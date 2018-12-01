@@ -8,6 +8,11 @@ class App extends React.Component {
     this.state = {
       view: 'menu'
     };
+    this.clickHandler = this.clickHandler.bind(this);
+  }
+
+  clickHandler (event) {
+    // function to change views when a menu button is clicked
   }
 
   render () {
@@ -15,7 +20,7 @@ class App extends React.Component {
       case 'menu':
         return (
           <div className="menu">
-            <Menu />
+            <Menu clickHandler={this.clickHandler} />
           </div>
         );
       case 'character':
