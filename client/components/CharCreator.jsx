@@ -15,9 +15,10 @@ class Creator extends React.Component {
   }
 
   render () {
+    const { name, caste, concept, supernal } = this.state.character;
     return (
       <div className="character">
-        <Info />
+        <Info name={name} caste={caste} concept={concept} supernal={sueprnal} />
         <Attributes />
         <Abilities />
         <Essence />
