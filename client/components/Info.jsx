@@ -17,7 +17,7 @@ const Info = (props) => (
   </div>
 );
 
-Info.PropTypes = {
+Info.propTypes = {
   name: PropTypes.string.isRequired,
   caste: PropTypes.string.isRequired,
   concept: PropTypes.string.isRequired,
