@@ -67,4 +67,4 @@ const charSchema = new mongoose.Schema({
   },
 });
 
-module.exports = { schema };
+module.exports.schema = charSchema;
