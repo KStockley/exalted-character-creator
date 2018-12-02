@@ -1,5 +1,7 @@
 const React = require('react');
-// const Creator = require('./CharCreator.jsx');
+const blank = require('../blank.jsx');
+
+import Creator from './CharCreator.jsx';
 import Menu from './Menu.jsx';
 
 class App extends React.Component {
@@ -21,6 +23,9 @@ class App extends React.Component {
       <div className="menu">
         { this.state.view === 'menu' &&
           <Menu clickHandler={this.clickHandler} />
+        }
+        { this.state.view === 'new' &&
+          <Creator />
         }
       </div>
     );
