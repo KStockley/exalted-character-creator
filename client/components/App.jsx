@@ -25,7 +25,7 @@ class App extends React.Component {
           <Menu clickHandler={this.clickHandler} />
         }
         { this.state.view === 'new' &&
-          <Creator />
+          <Creator sheet={blank} />
         }
       </div>
     );

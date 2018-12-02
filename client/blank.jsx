@@ -1,4 +1,4 @@
-const blank = {
+module.exports = {
   name: '',
   caste: '',
   concept: '',
@@ -48,12 +48,12 @@ const blank = {
   willpower: 5,
   essence: {
     rating: 1,
-    personal: (blank.essence.rating * 3) + 10,
-    peripheral: (blank.essence.rating * 7) + 26,
+    personal: 13,
+    peripheral: 33,
   },
   parry: 0,
   evasion: 0,
-  soak: blank.physical.stamina,
+  soak: 1,
   resolve: 0,
   guile: 0,
   health: {
@@ -64,5 +64,3 @@ const blank = {
     incap: 1,
   },
 };
-
-module.exports = { blank };
