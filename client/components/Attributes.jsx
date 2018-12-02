@@ -3,25 +3,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Attributes = (props) => (
-  <div className="attributes">
-    <div className="physical">
-      <p className="strength">Strength: {props.physical.strength}</p>
-      <p className="dexterity">Dexterity: {props.physical.dexterity}</p>
-      <p className="stamina">Stamina: {props.physical.stamina}</p>
+const Attributes = (props) => {
+  let physicals = [];
+  let mentals = [];
+  let socials = [];
+
+  for (var attr in props.physical) {
+    physicals.push(
+      <p className={attr} key={attr}>{attr}: {props.physical[attr]}</p>
+    );
+  }
+
+  for (var attr in props.mental) {
+    mentals.push(
+      <p className={attr} key={attr}>{attr}: {props.mental[attr]}</p>
+    );
+  }
+
+  for (var attr in props.social) {
+    socials.push(
+      <p className={attr} key={attr}>{attr}: {props.social[attr]}</p>
+    );
+  }
+
+  return (
+    <div className="attributes">
+      <div className="physical">
+        {physicals}
+      </div>
+      <div className="social">
+        {socials}
+      </div>
+      <div className="mental">
+        {mentals}
+      </div>
     </div>
-    <div className="social">
-      <p className="charisma">Charisma: {props.social.charisma}</p>
-      <p className="manipulation">Manipulation: {props.social.manipulation}</p>
-      <p className="appearance">Appearance: {props.social.appearance}</p>
-    </div>
-    <div className="mental">
-      <p className="perception">Perception: {props.mental.perception}</p>
-      <p className="intelligence">Intelligence: {props.mental.intelligence}</p>
-      <p className="wits">Wits: {props.mental.wits}</p>
-    </div>
-  </div>
-);
+  );
+};
 
 Attributes.propTypes = {
   physical: PropTypes.object.isRequired,
