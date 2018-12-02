@@ -5,9 +5,9 @@ import React from 'react';
 import Info from './Info.jsx';
 import Attributes from './Attributes.jsx';
 import Abilities from './Abilities.jsx';
-// import Essence from 'Essence.jsx';
-// import Health from 'Health.jsx';
-// import Defense from 'Defense.jsx';
+import Essence from './Essence.jsx';
+// import Health from './Health.jsx';
+// import Defense from './Defense.jsx';
 
 class Creator extends React.Component {
   constructor (props) {
@@ -21,6 +21,7 @@ class Creator extends React.Component {
         <Info info={this.state.info} />
         <Attributes physical={this.state.physical} social={this.state.social} mental={this.state.mental} />
         <Abilities abilities={this.state.abilities} />
+        <Essence essence={this.state.essence} />
       </div>
     );
   }

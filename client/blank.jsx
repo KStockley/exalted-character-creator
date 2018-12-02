@@ -1,9 +1,9 @@
 module.exports = {
   info: {
-    Name: '',
-    Caste: '',
-    Concept: '',
-    Supernal: '',
+    name: 'FILL_ME_IN',
+    caste: 'FILL_ME_IN',
+    concept: 'FILL_ME_IN',
+    supernal: 'FILL_ME_IN',
   },
   physical: {
     Strength: 1,
@@ -47,22 +47,22 @@ module.exports = {
     Thrown: 0,
     War: 0,
   },
-  Willpower: 5,
+  willpower: 5,
   essence: {
-    Rating: 1,
-    Personal: 13,
-    Peripheral: 33,
+    rating: 1,
+    personal: 13,
+    peripheral: 33,
   },
-  Parry: 0,
-  Evasion: 0,
-  Soak: 1,
-  Resolve: 0,
-  Guile: 0,
-  Health: {
+  parry: 0,
+  evasion: 0,
+  soak: 1,
+  resolve: 0,
+  guile: 0,
+  health: {
     '-0': 1,
     '-1': 2,
     '-2': 2,
     '-4': 1,
-    Incap: 1,
+    incap: 1,
   },
 };
