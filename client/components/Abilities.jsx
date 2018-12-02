@@ -8,7 +8,7 @@ const Abilities = (props) => {
   
   for (var ability in props.abilities) {
     abilityList.push(
-      <p className={ability}>{ability}: {props.abilities[ability]}</p>
+      <p className={ability} key={ability}>{ability}: {props.abilities[ability]}</p>
     );
   }
 
