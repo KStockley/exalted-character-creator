@@ -33,7 +33,7 @@ module.exports = {
     Larceny: 0,
     Linguistics: 0,
     Lore: 0,
-    Martial: 0,
+    'Martial Arts': 0,
     Medicine: 0,
     Melee: 0,
     Occult: 0,
@@ -63,6 +63,6 @@ module.exports = {
     '-1': 2,
     '-2': 2,
     '-4': 1,
-    Incapacitated: 1,
+    Incap: 1,
   },
 };
