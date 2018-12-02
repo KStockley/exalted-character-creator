@@ -3,11 +3,11 @@
 
 import React from 'react';
 import Info from './Info.jsx';
-// import Attributes from './attr.jsx';
-// import Abilities from './abilities.jsx';
-// import Essence from 'essence.jsx';
-// import Health from 'health.jsx';
-// import Defense from 'defense.jsx';
+import Attributes from './Attributes.jsx';
+// import Abilities from './Abilities.jsx';
+// import Essence from 'Essence.jsx';
+// import Health from 'Health.jsx';
+// import Defense from 'Defense.jsx';
 
 class Creator extends React.Component {
   constructor (props) {
@@ -19,6 +19,7 @@ class Creator extends React.Component {
     return (
       <div className="character">
         <Info info={this.state.info} />
+        <Attributes physical={this.state.physical} social={this.state.social} mental={this.state.mental} />
       </div>
     );
   }
