@@ -1,6 +1,5 @@
-const React = require('react');
-const blank = require('../blank.jsx');
-
+import React from 'react';
+import blank from '../blank.jsx';
 import Creator from './CharCreator.jsx';
 import Menu from './Menu.jsx';
 

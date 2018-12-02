@@ -1,8 +1,10 @@
 module.exports = {
-  name: '',
-  caste: '',
-  concept: '',
-  supernal: '',
+  info: {
+    name: '',
+    caste: '',
+    concept: '',
+    supernal: '',
+  },
   physical: {
     strength: 1,
     dexterity: 1,

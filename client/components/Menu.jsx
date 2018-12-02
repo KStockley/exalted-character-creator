@@ -3,8 +3,8 @@
 //
 // three buttons each of which will change the main app view
 // via an onclick handler passed from App
-const PropTypes = require('prop-types');
-const React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const Menu = (props) => {
   return (

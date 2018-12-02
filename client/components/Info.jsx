@@ -1,27 +1,27 @@
+// this component will display the `info` block of the character sheet
+
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Info = (props) => (
   <div className="info">
     <p className="name">
-      {props.name}
+      Name: {props.info.name}
     </p>
     <p className="caste">
-      {props.caste}
+      Caste: {props.info.caste}
     </p>
     <p className="concept">
-      {props.concept}
+      Concept: {props.info.concept}
     </p>
     <p className="supernal">
-      {props.supernal}
+      Supernal Ability: {props.info.supernal}
     </p>
   </div>
 );
 
 Info.propTypes = {
-  name: PropTypes.string.isRequired,
-  caste: PropTypes.string.isRequired,
-  concept: PropTypes.string.isRequired,
-  supernal: PropTypes.string.isRequired,
+  info: PropTypes.object.isRequired,
 };
 
-export default Creator;
+export default Info;

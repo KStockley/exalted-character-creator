@@ -1,6 +1,8 @@
-const React = require('react');
+// this view/component will display a fresh character sheet in the case of a `new` view
+// or a sheet from the database in the case of a `load` view
 
-// import Info from './info.jsx';
+import React from 'react';
+import Info from './Info.jsx';
 // import Attributes from './attr.jsx';
 // import Abilities from './abilities.jsx';
 // import Essence from 'essence.jsx';
@@ -16,7 +18,7 @@ class Creator extends React.Component {
   render () {
     return (
       <div className="character">
-        Creator Component Here
+        <Info info={this.state.info} />
       </div>
     );
   }
