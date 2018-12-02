@@ -4,7 +4,7 @@
 import React from 'react';
 import Info from './Info.jsx';
 import Attributes from './Attributes.jsx';
-// import Abilities from './Abilities.jsx';
+import Abilities from './Abilities.jsx';
 // import Essence from 'Essence.jsx';
 // import Health from 'Health.jsx';
 // import Defense from 'Defense.jsx';
@@ -20,6 +20,7 @@ class Creator extends React.Component {
       <div className="character">
         <Info info={this.state.info} />
         <Attributes physical={this.state.physical} social={this.state.social} mental={this.state.mental} />
+        <Abilities abilities={this.state.abilities} />
       </div>
     );
   }
