@@ -20,12 +20,13 @@ class Creator extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    alert('Character Saved');
   }
 
   handleChange(e) {
     // setState to update changes
     this.setState({
-      e.target.name: e.target.value,
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -47,7 +48,7 @@ class Creator extends React.Component {
 
     return (
       <div className="character-display">
-        <form id="character-sheet" onSubmit={handleSubmit}>
+        <form id="character-sheet" onSubmit={this.handleSubmit}>
           <Info info={info} />
           <Attributes physical={physical} social={social} mental={mental} onChange={this.handleChange} />
           <Abilities abilities={abilities} onChange={this.handleChange} />
