@@ -18,10 +18,12 @@ class Creator extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleInfoChange = this.handleInfoChange.bind(this);
+    this.handleAttrChange = this.handleAttrChange.bind(this);
   }
 
   handleSubmit (e) {
     e.preventDefault();
+    console.log(this.state);
     alert('Character Saved');
   }
 
@@ -34,8 +36,20 @@ class Creator extends React.Component {
 
   handleInfoChange (e) {
     // setState to update changes
+    console.log(e.target.name, e.target.value);
     this.setState({
-      [e.target.name]: e.target.value,
+      [e.target.name]: parseInt(e.target.value, 10),
+    });
+  }
+
+  handleAttrChange(e) {
+    // setState to update changes
+    const subset = e.target.name.split('.')[0];
+    const attr = e.target.name.split('.')[1];
+    this.setState({
+      [subset]: {
+        [attr]: parseInt(e.target.value, 10),
+      }
     });
   }
 
@@ -65,7 +79,7 @@ class Creator extends React.Component {
       <div className="character-display">
         <form id="character-sheet" onSubmit={this.handleSubmit}>
           <Info info={info} handleChange={this.handleInfoChange} />
-          <Attributes physical={physical} social={social} mental={mental} onChange={this.handleChange} />
+          <Attributes physical={physical} social={social} mental={mental} onChange={this.handleAttrChange} />
           <Abilities abilities={abilities} onChange={this.handleChange} />
           <Essence essence={essence} onChange={this.handleChange} />
           <Health health={health} onChange={this.handleChange} />
