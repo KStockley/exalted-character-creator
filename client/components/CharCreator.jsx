@@ -7,7 +7,7 @@ import Attributes from './Attributes.jsx';
 import Abilities from './Abilities.jsx';
 import Essence from './Essence.jsx';
 import Health from './Health.jsx';
-// import Defense from './Defense.jsx';
+import Defense from './Defense.jsx';
 
 class Creator extends React.Component {
   constructor (props) {
@@ -18,6 +18,19 @@ class Creator extends React.Component {
   render () {
     const { info, physical, social, mental, abilities, essence, health } = this.state;
 
+    const defense = {
+      dex: physical.Dexterity,
+      sta: physical.Stamina,
+      man: social.Manipulation,
+      wits: mental.Wits,
+      dodge: abilities.Dodge,
+      brawl: abilities.Brawl,
+      martial: abilities.['Martial Arts'],
+      melee: abilities.Melee,
+      integrity: abilities.Integrity,
+      socialize: abilities.Socialize,
+    };
+
     return (
       <div className="character-display">
         <form className="character-sheet">
@@ -26,6 +39,7 @@ class Creator extends React.Component {
           <Abilities abilities={abilities} />
           <Essence essence={essence} />
           <Health health={health} />
+          <Defense defense={defense} />
         </form>
       </div>
     );
