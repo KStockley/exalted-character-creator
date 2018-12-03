@@ -5,14 +5,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Essence = (props) => {
-  const personalPool = props.essence.rating * 3 + 10;
-  const peripheralPool = props.essence.rating * 7 + 26;
+  const personalPool = props.essence * 3 + 10;
+  const peripheralPool = props.essence * 7 + 26;
 
   return(
     <div className="essence">
       <label>
         Essence Rating:
-        <input type="radio" name="rating" className="rating" value="1" />
+        <input type="radio" name="rating" className="rating" value="1" checked />
         <input type="radio" name="rating" className="rating" value="2" />
         <input type="radio" name="rating" className="rating" value="3" />
         <input type="radio" name="rating" className="rating" value="4" />
@@ -33,7 +33,7 @@ const Essence = (props) => {
 }
 
 Essence.propTypes = {
-  essence: PropTypes.object.isRequired,
+  essence: PropTypes.number.isRequired,
 };
 
 export default Essence;
