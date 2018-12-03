@@ -12,7 +12,7 @@ const Essence = (props) => {
     <div className="essence">
       <label>
         Essence Rating:
-        <input type="radio" name="rating" className="rating" value="1" checked />
+        <input type="radio" name="rating" className="rating" value="1" defaultChecked />
         <input type="radio" name="rating" className="rating" value="2" />
         <input type="radio" name="rating" className="rating" value="3" />
         <input type="radio" name="rating" className="rating" value="4" />
