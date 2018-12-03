@@ -8,11 +8,25 @@ import Abilities from './Abilities.jsx';
 import Essence from './Essence.jsx';
 import Health from './Health.jsx';
 import Defense from './Defense.jsx';
+import Save from './Save.jsx';
 
 class Creator extends React.Component {
   constructor (props) {
     super(props);
     this.state = { ...props.sheet };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  handleChange(e) {
+    // setState to update changes
+    this.setState({
+      e.target.name: e.target.value,
+    });
   }
 
   render () {
@@ -33,13 +47,14 @@ class Creator extends React.Component {
 
     return (
       <div className="character-display">
-        <form className="character-sheet">
+        <form id="character-sheet" onSubmit={handleSubmit}>
           <Info info={info} />
-          <Attributes physical={physical} social={social} mental={mental} />
-          <Abilities abilities={abilities} />
-          <Essence essence={essence} />
-          <Health health={health} />
-          <Defense defense={defense} />
+          <Attributes physical={physical} social={social} mental={mental} onChange={this.handleChange} />
+          <Abilities abilities={abilities} onChange={this.handleChange} />
+          <Essence essence={essence} onChange={this.handleChange} />
+          <Health health={health} onChange={this.handleChange} />
+          <Defense defense={defense} onChange={this.handleChange} />
+          <Save />
         </form>
       </div>
     );
