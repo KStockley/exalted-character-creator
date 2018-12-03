@@ -16,14 +16,16 @@ class Creator extends React.Component {
   }
 
   render () {
+    const { info, physical, social, mental, abilities, essence, health } = this.state;
+
     return (
       <div className="character-display">
         <form className="character-sheet">
-          <Info info={this.state.info} />
-          <Attributes physical={this.state.physical} social={this.state.social} mental={this.state.mental} />
-          <Abilities abilities={this.state.abilities} />
-          <Essence essence={this.state.essence} />
-          <Health health={this.state.health} />
+          <Info info={info} />
+          <Attributes physical={physical} social={social} mental={mental} />
+          <Abilities abilities={abilities} />
+          <Essence essence={essence} />
+          <Health health={health} />
         </form>
       </div>
     );

@@ -48,16 +48,7 @@ module.exports = {
     War: 0,
   },
   willpower: 5,
-  essence: {
-    rating: 1,
-    personal: 13,
-    peripheral: 33,
-  },
-  parry: 0,
-  evasion: 0,
-  soak: 1,
-  resolve: 0,
-  guile: 0,
+  essence: 1,
   health: {
     '-0': 1,
     '-1': 2,

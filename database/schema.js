@@ -50,16 +50,7 @@ const charSchema = new mongoose.Schema({
     War: Number,
   },
   willpower: Number,
-  essence: {
-    rating: Number,
-    personal: Number,
-    peripheral: Number,
-  },
-  parry: Number,
-  evasion: Number,
-  soak: Number,
-  resolve: Number,
-  guile: Number,
+  essence: Number,
   health: {
     '-0': Number,
     '-Number': Number,
