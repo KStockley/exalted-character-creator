@@ -10,8 +10,12 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/exalted', (req, res) => {
-  // GET route for characters
+app.get('/exalted/:character', (req, res) => {
+  // GET route for loading a character
+});
+
+app.post('/exalted/save', (req, res) => {
+  // POST route for saving characters
 });
 
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
