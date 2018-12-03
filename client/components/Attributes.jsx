@@ -9,40 +9,67 @@ const Attributes = (props) => {
   let socials = [];
 
   for (var attr in props.physical) {
+    let dots = [];
+    for (let i = 1; i < 6; i += 1) {
+      if (props.physical[attr] === i) {
+        dots.push(
+          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} defaultChecked />
+        );
+      } else {
+        dots.push(
+          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} />
+        );
+      }
+    }
+
     physicals.push(
       <label>
         {attr}:
-        <input type="radio" name={attr} className={attr} value="1" key={attr + '1'} />
-        <input type="radio" name={attr} className={attr} value="2" key={attr + '2'} />
-        <input type="radio" name={attr} className={attr} value="3" key={attr + '3'} />
-        <input type="radio" name={attr} className={attr} value="4" key={attr + '4'} />
-        <input type="radio" name={attr} className={attr} value="5" key={attr + '5'} />
+        {dots}
       </label>
     );
   }
 
   for (var attr in props.social) {
+    let dots = [];
+    for (let i = 1; i < 6; i += 1) {
+      if (props.social[attr] === i) {
+        dots.push(
+          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} defaultChecked />
+        );
+      } else {
+        dots.push(
+          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} />
+        );
+      }
+    }
+
     socials.push(
       <label>
         {attr}:
-        <input type="radio" name={attr} className={attr} value="1" key={attr + '1'} />
-        <input type="radio" name={attr} className={attr} value="2" key={attr + '2'} />
-        <input type="radio" name={attr} className={attr} value="3" key={attr + '3'} />
-        <input type="radio" name={attr} className={attr} value="4" key={attr + '4'} />
-        <input type="radio" name={attr} className={attr} value="5" key={attr + '5'} />
+        {dots}
       </label>
     );
   }
 
   for (var attr in props.mental) {
+    let dots = [];
+    for (let i = 1; i < 6; i += 1) {
+      if (props.mental[attr] === i) {
+        dots.push(
+          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} defaultChecked />
+        );
+      } else {
+        dots.push(
+          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} />
+        );
+      }
+    }
+
     mentals.push(
       <label>
         {attr}:
-        <input type="radio" name={attr} className={attr} value="1" key={attr + '1'} />
-        <input type="radio" name={attr} className={attr} value="2" key={attr + '2'} />
-        <input type="radio" name={attr} className={attr} value="3" key={attr + '3'} />
-        <input type="radio" name={attr} className={attr} value="4" key={attr + '4'} />
-        <input type="radio" name={attr} className={attr} value="5" key={attr + '5'} />
+        {dots}
       </label>
     );
   }
