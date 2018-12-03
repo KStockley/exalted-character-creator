@@ -5,18 +5,17 @@ import PropTypes from 'prop-types';
 
 const Info = (props) => (
   <div className="info">
-    <p className="name">
-      Name: {props.info.name}
-    </p>
-    <p className="caste">
-      Caste: {props.info.caste}
-    </p>
-    <p className="concept">
-      Concept: {props.info.concept}
-    </p>
-    <p className="supernal">
-      Supernal Ability: {props.info.supernal}
-    </p>
+    <label for="name">Name: </label>
+    <input type="text" name="name" className="name"></input>
+    <br />
+    <label for="caste">Caste: </label>
+    <input type="text" name="caste" className="caste"></input>
+    <br />
+    <label for="concept">Concept: </label>
+    <input type="text" name="concept" className="concept"></input>
+    <br />
+    <label for="supernal">Supernal Ability: </label>
+    <input type="text" name="supernal" className="supernal"></input>
   </div>
 );
 

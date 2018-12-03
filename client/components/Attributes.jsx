@@ -10,33 +10,51 @@ const Attributes = (props) => {
 
   for (var attr in props.physical) {
     physicals.push(
-      <p className={attr} key={attr}>{attr}: {props.physical[attr]}</p>
+      <div className="physical">
+        {attr}:
+        <label for={attr} />
+        <input type="radio" name="physical" className={attr} value="1" key={attr} />
+        <input type="radio" name="physical" className={attr} value="2" key={attr} />
+        <input type="radio" name="physical" className={attr} value="3" key={attr} />
+        <input type="radio" name="physical" className={attr} value="4" key={attr} />
+        <input type="radio" name="physical" className={attr} value="5" key={attr} />
+      </div>
     );
   }
 
   for (var attr in props.mental) {
     mentals.push(
-      <p className={attr} key={attr}>{attr}: {props.mental[attr]}</p>
+      <div className="mental">
+        {attr}:
+        <label for={attr} />
+        <input type="radio" name="mental" className={attr} value="1" key={attr} />
+        <input type="radio" name="mental" className={attr} value="2" key={attr} />
+        <input type="radio" name="mental" className={attr} value="3" key={attr} />
+        <input type="radio" name="mental" className={attr} value="4" key={attr} />
+        <input type="radio" name="mental" className={attr} value="5" key={attr} />
+      </div>
     );
   }
 
   for (var attr in props.social) {
     socials.push(
-      <p className={attr} key={attr}>{attr}: {props.social[attr]}</p>
+      <div className="social">
+        {attr}:
+        <label for={attr} />
+        <input type="radio" name="social" className={attr} value="1" key={attr} />
+        <input type="radio" name="social" className={attr} value="2" key={attr} />
+        <input type="radio" name="social" className={attr} value="3" key={attr} />
+        <input type="radio" name="social" className={attr} value="4" key={attr} />
+        <input type="radio" name="social" className={attr} value="5" key={attr} />
+      </div>
     );
   }
 
   return (
     <div className="attributes">
-      <div className="physical">
-        {physicals}
-      </div>
-      <div className="social">
-        {socials}
-      </div>
-      <div className="mental">
-        {mentals}
-      </div>
+      {physicals}
+      {socials}
+      {mentals}
     </div>
   );
 };

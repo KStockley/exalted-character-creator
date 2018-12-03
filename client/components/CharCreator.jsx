@@ -17,11 +17,13 @@ class Creator extends React.Component {
 
   render () {
     return (
-      <div className="character">
-        <Info info={this.state.info} />
-        <Attributes physical={this.state.physical} social={this.state.social} mental={this.state.mental} />
-        <Abilities abilities={this.state.abilities} />
-        <Essence essence={this.state.essence} />
+      <div className="character-display">
+        <form className="character-sheet">
+          <Info info={this.state.info} />
+          <Attributes physical={this.state.physical} social={this.state.social} mental={this.state.mental} />
+          <Abilities abilities={this.state.abilities} />
+          <Essence essence={this.state.essence} />
+        </form>
       </div>
     );
   }
