@@ -10,51 +10,55 @@ const Attributes = (props) => {
 
   for (var attr in props.physical) {
     physicals.push(
-      <div className="physical">
+      <label>
         {attr}:
-        <label for={attr} />
-        <input type="radio" name="physical" className={attr} value="1" key={attr} />
-        <input type="radio" name="physical" className={attr} value="2" key={attr} />
-        <input type="radio" name="physical" className={attr} value="3" key={attr} />
-        <input type="radio" name="physical" className={attr} value="4" key={attr} />
-        <input type="radio" name="physical" className={attr} value="5" key={attr} />
-      </div>
-    );
-  }
-
-  for (var attr in props.mental) {
-    mentals.push(
-      <div className="mental">
-        {attr}:
-        <label for={attr} />
-        <input type="radio" name="mental" className={attr} value="1" key={attr} />
-        <input type="radio" name="mental" className={attr} value="2" key={attr} />
-        <input type="radio" name="mental" className={attr} value="3" key={attr} />
-        <input type="radio" name="mental" className={attr} value="4" key={attr} />
-        <input type="radio" name="mental" className={attr} value="5" key={attr} />
-      </div>
+        <input type="radio" name={attr} className={attr} value="1" key={attr + '1'} />
+        <input type="radio" name={attr} className={attr} value="2" key={attr + '2'} />
+        <input type="radio" name={attr} className={attr} value="3" key={attr + '3'} />
+        <input type="radio" name={attr} className={attr} value="4" key={attr + '4'} />
+        <input type="radio" name={attr} className={attr} value="5" key={attr + '5'} />
+      </label>
     );
   }
 
   for (var attr in props.social) {
     socials.push(
-      <div className="social">
+      <label>
         {attr}:
-        <label for={attr} />
-        <input type="radio" name="social" className={attr} value="1" key={attr} />
-        <input type="radio" name="social" className={attr} value="2" key={attr} />
-        <input type="radio" name="social" className={attr} value="3" key={attr} />
-        <input type="radio" name="social" className={attr} value="4" key={attr} />
-        <input type="radio" name="social" className={attr} value="5" key={attr} />
-      </div>
+        <input type="radio" name={attr} className={attr} value="1" key={attr + '1'} />
+        <input type="radio" name={attr} className={attr} value="2" key={attr + '2'} />
+        <input type="radio" name={attr} className={attr} value="3" key={attr + '3'} />
+        <input type="radio" name={attr} className={attr} value="4" key={attr + '4'} />
+        <input type="radio" name={attr} className={attr} value="5" key={attr + '5'} />
+      </label>
+    );
+  }
+
+  for (var attr in props.mental) {
+    mentals.push(
+      <label>
+        {attr}:
+        <input type="radio" name={attr} className={attr} value="1" key={attr + '1'} />
+        <input type="radio" name={attr} className={attr} value="2" key={attr + '2'} />
+        <input type="radio" name={attr} className={attr} value="3" key={attr + '3'} />
+        <input type="radio" name={attr} className={attr} value="4" key={attr + '4'} />
+        <input type="radio" name={attr} className={attr} value="5" key={attr + '5'} />
+      </label>
     );
   }
 
   return (
     <div className="attributes">
-      {physicals}
-      {socials}
-      {mentals}
+      <div className="physical">
+        {physicals}
+      </div>
+      <div className="social">
+        {socials}
+      </div>
+      <div className="mental">
+        {mentals}
+      </div>
+      <br />
     </div>
   );
 };

@@ -8,7 +8,15 @@ const Abilities = (props) => {
   
   for (var ability in props.abilities) {
     abilityList.push(
-      <p className={ability} key={ability}>{ability}: {props.abilities[ability]}</p>
+      <label>
+        {ability}:
+        <input type="radio" name="social" className={ability} value="1" key={ability + '1'} />
+        <input type="radio" name="social" className={ability} value="2" key={ability + '2'} />
+        <input type="radio" name="social" className={ability} value="3" key={ability + '3'} />
+        <input type="radio" name="social" className={ability} value="4" key={ability + '4'} />
+        <input type="radio" name="social" className={ability} value="5" key={ability + '5'} />
+        <br />
+      </label>
     );
   }
 
