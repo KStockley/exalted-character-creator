@@ -25,7 +25,7 @@ class Creator extends React.Component {
       wits: mental.Wits,
       dodge: abilities.Dodge,
       brawl: abilities.Brawl,
-      martial: abilities.['Martial Arts'],
+      martial: abilities['Martial Arts'],
       melee: abilities.Melee,
       integrity: abilities.Integrity,
       socialize: abilities.Socialize,
