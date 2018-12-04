@@ -5,18 +5,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Essence = (props) => {
-  const personalPool = props.essence * 3 + 10;
-  const peripheralPool = props.essence * 7 + 26;
+  const rating = props.essence || 1;
+  const personalPool = rating * 3 + 10;
+  const peripheralPool = rating * 7 + 26;
+  let dots = [];
+
+  for (let i = 1; i < 6; i += 1) {
+    if (rating === i) {
+      dots.push(
+        <input type="radio" name="essence" className="essence" value={i} key={`willpower${i}`} onChange={props.handleChange} defaultChecked />
+      );
+    } else {
+      dots.push(
+        <input type="radio" name="essence" className="essence" value={i} key={`willpower${i}`} onChange={props.handleChange} />
+      );
+    }
+  }
 
   return(
     <div className="essence">
       <label>
         Essence Rating:
-        <input type="radio" name="essence" className="essence" value="1" onChange={props.handleChange} defaultChecked />
-        <input type="radio" name="essence" className="essence" value="2" onChange={props.handleChange} />
-        <input type="radio" name="essence" className="essence" value="3" onChange={props.handleChange} />
-        <input type="radio" name="essence" className="essence" value="4" onChange={props.handleChange} />
-        <input type="radio" name="essence" className="essence" value="5" onChange={props.handleChange} />
+        {dots}
       </label>
       <br />
       <label>

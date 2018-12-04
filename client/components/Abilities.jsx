@@ -5,16 +5,26 @@ import PropTypes from 'prop-types';
 
 const Abilities = (props) => {
   let abilityList = [];
-  
+
   for (var ability in props.abilities) {
+    let dots = [];
+    let rating = props.abilities[ability] || 0;
+    for (let i = 1; i < 6; i += 1) {
+      if (rating === i) {
+        dots.push(
+          <input type="radio" name={ability} className={ability} value={i} key={`${ability}${i}`} onChange={props.handleChange} defaultChecked />
+        );
+      } else {
+        dots.push(
+          <input type="radio" name={ability} className={ability} value={i} key={`${ability}${i}`} onChange={props.handleChange} />
+        );
+      }
+    }
+
     abilityList.push(
       <label>
         {ability}:
-        <input type="radio" name={ability} className={ability} value="1" key={ability + '1'} onChange={props.handleChange} />
-        <input type="radio" name={ability} className={ability} value="2" key={ability + '2'} onChange={props.handleChange} />
-        <input type="radio" name={ability} className={ability} value="3" key={ability + '3'} onChange={props.handleChange} />
-        <input type="radio" name={ability} className={ability} value="4" key={ability + '4'} onChange={props.handleChange} />
-        <input type="radio" name={ability} className={ability} value="5" key={ability + '5'} onChange={props.handleChange} />
+        {dots}
         <br />
       </label>
     );

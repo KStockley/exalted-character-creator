@@ -6,8 +6,9 @@ const Subset = (props) => {
 
   for (var stat in props.stats) {
     let dots = [];
+    let rating = props.stats[stat] || 1;
     for (let i = 1; i < 6; i += 1) {
-      if (props.stats[stat] === i) {
+      if (rating === i) {
         dots.push(
           <input type="radio" name={stat} className={props.subset} value={i} key={`${stat}${i}`} onChange={props.handleChange} defaultChecked />
         );
