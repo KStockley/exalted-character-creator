@@ -13,7 +13,7 @@ import Defense from './Defense.jsx';
 import Save from './Save.jsx';
 import blocks from '../blocks.jsx';
 
-class Creator extends React.Component {
+class CharSheet extends React.Component {
   constructor (props) {
     super(props);
     this.state = { ...props.sheet };
@@ -44,7 +44,12 @@ class Creator extends React.Component {
     });
   }
 
+  componentDidMount () {
+    // load up a blank sheet or load per character name
+  }
+
   render () {
+    console.log(this.state);
     const { physical, social, mental, abilities, info, health } = blocks;
     const { essence, willpower } = this.state;
 
@@ -78,4 +83,4 @@ class Creator extends React.Component {
   }
 }
 
-export default Creator;
+export default CharSheet;

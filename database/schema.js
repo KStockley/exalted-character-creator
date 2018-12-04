@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
-  name: String,
-  caste: String,
-  concept: String,
-  supernal: String,
-  Strength: { type: Number, default: 1 }
+  name: { type: String, default: 'FILL_ME_IN' },
+  caste: { type: String, default: 'FILL_ME_IN' },
+  concept: { type: String, default: 'FILL_ME_IN' },
+  supernal: { type: String, default: 'FILL_ME_IN' },
+  Strength: { type: Number, default: 1 },
   Dexterity: { type: Number, default: 1 },
   Stamina: { type: Number, default: 1 },
   Charisma: { type: Number, default: 1 },

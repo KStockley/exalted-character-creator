@@ -1,13 +1,13 @@
 import React from 'react';
 import blank from '../blank.jsx';
-import Creator from './CharCreator.jsx';
+import CharSheet from './CharSheet.jsx';
 import Menu from './Menu.jsx';
 
 class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      view: 'menu'
+      view: 'menu',
     };
     this.clickHandler = this.clickHandler.bind(this);
   }
@@ -24,7 +24,10 @@ class App extends React.Component {
           <Menu clickHandler={this.clickHandler} />
         }
         { this.state.view === 'new' &&
-          <Creator sheet={blank} />
+          <CharSheet sheet={blank} />
+        }
+        { this.state.view === 'load' &&
+          <CharSheet sheet={this.state.character} />
         }
       </div>
     );
