@@ -2,6 +2,7 @@
 // or a sheet from the database in the case of a `load` view
 
 import React from 'react';
+import $ from 'jquery';
 import Info from './Info.jsx';
 import Attributes from './Attributes.jsx';
 import Abilities from './Abilities.jsx';
@@ -24,8 +25,9 @@ class Creator extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
-    console.log(this.state);
-    alert('Character Saved');
+    $.post('/exalted/save', this.state, () => {
+      alert('Character Saved');
+    });
   }
 
   handleInfoChange (e) {
@@ -59,8 +61,6 @@ class Creator extends React.Component {
       socialize: this.state.Socialize,
     };
     
-    console.log(this.state);
-
     return (
       <div className="character-display">
         <form id="character-sheet" onSubmit={this.handleSubmit}>

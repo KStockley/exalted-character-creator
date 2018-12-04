@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const { db, Character } = require('../database/index.js');
+const model = require('../database/model.js');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,7 +15,15 @@ app.get('/exalted/:character', (req, res) => {
 });
 
 app.post('/exalted/save', (req, res) => {
-  // POST route for saving characters
+  // POST route for saving a character
+  model.create(req.body, (err, character) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(201);
+    }
+  });
 });
 
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
