@@ -2,89 +2,15 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import Subset from './Subset.jsx';
 
 const Attributes = (props) => {
-  let physicals = [];
-  let mentals = [];
-  let socials = [];
-
-  for (var attr in props.physical) {
-    let dots = [];
-    for (let i = 1; i < 6; i += 1) {
-      if (props.physical[attr] === i) {
-        dots.push(
-          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} defaultChecked />
-        );
-      } else {
-        dots.push(
-          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} />
-        );
-      }
-    }
-
-    physicals.push(
-      <label>
-        {attr}:
-        {dots}
-      </label>
-    );
-  }
-
-  for (var attr in props.social) {
-    let dots = [];
-    for (let i = 1; i < 6; i += 1) {
-      if (props.social[attr] === i) {
-        dots.push(
-          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} defaultChecked />
-        );
-      } else {
-        dots.push(
-          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} />
-        );
-      }
-    }
-
-    socials.push(
-      <label>
-        {attr}:
-        {dots}
-      </label>
-    );
-  }
-
-  for (var attr in props.mental) {
-    let dots = [];
-    for (let i = 1; i < 6; i += 1) {
-      if (props.mental[attr] === i) {
-        dots.push(
-          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} defaultChecked />
-        );
-      } else {
-        dots.push(
-          <input type="radio" name={attr} className={attr} value={i} key={`${attr}${i}`} />
-        );
-      }
-    }
-
-    mentals.push(
-      <label>
-        {attr}:
-        {dots}
-      </label>
-    );
-  }
 
   return (
     <div className="attributes">
-      <div className="physical">
-        {physicals}
-      </div>
-      <div className="social">
-        {socials}
-      </div>
-      <div className="mental">
-        {mentals}
-      </div>
+      <Subset className="physical" subset='physical' stats={props.physical} />
+      <Subset className="social" subset='social' stats={props.social} />
+      <Subset className="mental" subset='mental' stats={props.mental} />
       <br />
     </div>
   );
