@@ -20,24 +20,23 @@ class Creator extends React.Component {
     this.handleInfoChange = this.handleInfoChange.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit (e) {
     e.preventDefault();
     alert('Character Saved');
   }
 
-  handleChange(e) {
+  handleChange (e) {
     // setState to update changes
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
 
-  handleInfoChange(e) {
+  handleInfoChange (e) {
     // setState to update changes
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   }
 
   render () {

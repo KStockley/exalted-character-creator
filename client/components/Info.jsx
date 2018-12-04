@@ -7,19 +7,19 @@ const Info = (props) => (
   <div className="info">
     <label>
       Name: 
-      <input type="text" name="name" className="name" handleChange={handleChange}></input>
+      <input type="text" name="name" className="name" onChange={props.handleChange}></input>
     </label>
     <label>
       Caste: 
-      <input type="text" name="caste" className="caste" handleChange={handleChange}></input>
+      <input type="text" name="caste" className="caste" onChange={props.handleChange}></input>
     </label>
     <label>
       Concept: 
-      <input type="text" name="concept" className="concept" handleChange={handleChange}></input>
+      <input type="text" name="concept" className="concept" onChange={props.handleChange}></input>
     </label>
     <label>
       Supernal Ability: 
-      <input type="text" name="supernal" className="supernal" handleChange={handleChange}></input>
+      <input type="text" name="supernal" className="supernal" onChange={props.handleChange}></input>
     </label>
   </div>
 );
