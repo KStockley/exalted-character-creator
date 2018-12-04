@@ -45,11 +45,10 @@ class CharSheet extends React.Component {
   }
 
   componentDidMount () {
-    // load up a blank sheet or load per character name
+    console.log(`Now displaying: ${this.state.name}`);
   }
 
   render () {
-    console.log(this.state);
     const { physical, social, mental, abilities, info, health } = blocks;
     const { essence, willpower } = this.state;
 

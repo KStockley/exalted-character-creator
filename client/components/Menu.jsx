@@ -9,9 +9,9 @@ import React from 'react';
 const Menu = (props) => {
   return (
     <div className="menu">
-      <button className="new" type="button" value="new" onClick={props.clickHandler}>New</button>
-      <button className="load" type="button" value="load" onClick={props.clickHandler}>Load</button>
-      <button className="delete" type="button" value="delete" onClick={props.clickHandler}>Delete</button>
+      <button className="new" type="button" name="view" value="new" onClick={props.clickHandler}>New</button>
+      <button className="load" type="button" name="view" value="load" onClick={props.clickHandler}>Load</button>
+      <button className="delete" type="button" name="view" value="delete" onClick={props.clickHandler}>Delete</button>
     </div>
   );
 }
