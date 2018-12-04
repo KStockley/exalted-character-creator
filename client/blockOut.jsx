@@ -25,6 +25,19 @@ module.exports = blockOut = (char) => {
     supernal: char.supernal,
   };
 
+  const defense = {
+      dex: char.Dexterity,
+      sta: char.Stamina,
+      man: char.Manipulation,
+      wits: char.Wits,
+      dodge: char.Dodge,
+      brawl: char.Brawl,
+      martial: char['Martial Arts'],
+      melee: char.Melee,
+      integrity: char.Integrity,
+      socialize: char.Socialize,
+    };
+
   const abilities = {
     Archery: char.Archery,
     Athletics: char.Athletics,
@@ -61,5 +74,5 @@ module.exports = blockOut = (char) => {
     incap: 1,
   };
 
-  return { physical, mental, social, abilities, info, health };
+  return { physical, mental, social, abilities, info, health, defense };
 }

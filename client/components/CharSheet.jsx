@@ -45,22 +45,9 @@ class CharSheet extends React.Component {
   }
 
   render () {
-    const { physical, social, mental, abilities, info, health } = blockOut(this.state);
+    const { physical, social, mental, abilities, info, health, defense } = blockOut(this.state);
     const { essence, willpower } = this.state;
-
     const castes = ['Dawn', 'Zenith', 'Twilight', 'Night', 'Eclipse'];
-    const defense = {
-      dex: this.state.Dexterity,
-      sta: this.state.Stamina,
-      man: this.state.Manipulation,
-      wits: this.state.Wits,
-      dodge: this.state.Dodge,
-      brawl: this.state.Brawl,
-      martial: this.state['Martial Arts'],
-      melee: this.state.Melee,
-      integrity: this.state.Integrity,
-      socialize: this.state.Socialize,
-    };
     
     return (
       <div className="character-display">

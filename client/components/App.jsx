@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       view: 'menu',
-      sheet: blank,
+      sheet: {},
     };
     this.clickHandler = this.clickHandler.bind(this);
   }
@@ -46,7 +46,7 @@ class App extends React.Component {
           <Menu clickHandler={this.clickHandler} />
         }
         { this.state.view === 'new' &&
-          <CharSheet sheet={this.state.sheet} />
+          <CharSheet sheet={blank} />
         }
         { this.state.view === 'load' &&
           <CharSheet sheet={this.state.sheet} />
