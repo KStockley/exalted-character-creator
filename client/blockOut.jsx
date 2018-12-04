@@ -18,6 +18,18 @@ module.exports = blockOut = (char) => {
     Intelligence: char.Intelligence,
   };
 
+  const attributes = {
+    Perception: char.Perception,
+    Wits: char.Wits,
+    Intelligence: char.Intelligence,
+    Strength: char.Strength,
+    Dexterity: char.Dexterity,
+    Stamina: char.Stamina,
+    Charisma: char.Charisma,
+    Manipulation: char.Manipulation,
+    Appearance: char.Appearance,
+  };
+
   const info = {
     name: char.name,
     caste: char.caste,
@@ -74,5 +86,5 @@ module.exports = blockOut = (char) => {
     incap: 1,
   };
 
-  return { physical, mental, social, abilities, info, health, defense };
+  return { physical, mental, social, attributes, abilities, info, health, defense };
 }
