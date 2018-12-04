@@ -10,11 +10,11 @@ const Abilities = (props) => {
     abilityList.push(
       <label>
         {ability}:
-        <input type="radio" name={ability} className={ability} value="1" key={ability + '1'} />
-        <input type="radio" name={ability} className={ability} value="2" key={ability + '2'} />
-        <input type="radio" name={ability} className={ability} value="3" key={ability + '3'} />
-        <input type="radio" name={ability} className={ability} value="4" key={ability + '4'} />
-        <input type="radio" name={ability} className={ability} value="5" key={ability + '5'} />
+        <input type="radio" name={ability} className={ability} value="1" key={ability + '1'} onChange={props.handleChange} />
+        <input type="radio" name={ability} className={ability} value="2" key={ability + '2'} onChange={props.handleChange} />
+        <input type="radio" name={ability} className={ability} value="3" key={ability + '3'} onChange={props.handleChange} />
+        <input type="radio" name={ability} className={ability} value="4" key={ability + '4'} onChange={props.handleChange} />
+        <input type="radio" name={ability} className={ability} value="5" key={ability + '5'} onChange={props.handleChange} />
         <br />
       </label>
     );
@@ -29,6 +29,7 @@ const Abilities = (props) => {
 
 Abilities.propTypes = {
   abilities: PropTypes.object.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default Abilities;
