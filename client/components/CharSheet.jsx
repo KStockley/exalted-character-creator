@@ -66,12 +66,20 @@ class CharSheet extends React.Component {
       <div className="character-display">
         <form id="character-sheet" onSubmit={this.handleSubmit}>
           <Info info={info} castes={castes} abilities={abilities} handleChange={this.handleTextChange} />
-          <Attributes physical={physical} social={social} mental={mental} handleChange={this.handleChange} />
-          <Abilities abilities={abilities} handleChange={this.handleChange} />
-          <Essence essence={essence} handleChange={this.handleChange} />
-          <Willpower willpower={willpower} handleChange={this.handleChange} />
-          <Health health={health} handleChange={this.handleChange} />
-          <Defense defense={defense} />
+          <fieldset>
+            <legend>Attributes</legend>
+            <Attributes physical={physical} social={social} mental={mental} handleChange={this.handleChange} />
+          </fieldset>
+          <fieldset>
+            <legend>Abilties</legend>
+            <Abilities abilities={abilities} handleChange={this.handleChange} />
+          </fieldset>
+          <fieldset>
+            <Essence essence={essence} handleChange={this.handleChange} />
+            <Willpower willpower={willpower} handleChange={this.handleChange} />
+          </fieldset>
+            <Health health={health} handleChange={this.handleChange} />
+            <Defense defense={defense} />
           <Save />
         </form>
       </div>
