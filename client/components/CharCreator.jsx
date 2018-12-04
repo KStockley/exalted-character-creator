@@ -16,6 +16,8 @@ class Creator extends React.Component {
     this.state = { ...props.sheet };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleInfoChange = this.handleInfoChange.bind(this);
   }
 
   handleSubmit(e) {
@@ -30,8 +32,22 @@ class Creator extends React.Component {
     });
   }
 
+  handleInfoChange(e) {
+    // setState to update changes
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+    console.log(this.state);
+  }
+
   render () {
-    const { info, physical, social, mental, abilities, essence, health } = this.state;
+    const { physical, social, mental, abilities, essence, health } = this.state;
+    const info = {
+      name: this.state.name,
+      caste: this.state.caste,
+      concept: this.state.concept,
+      supernal: this.state.supernal,
+    };
 
     const defense = {
       dex: physical.Dexterity,
@@ -49,7 +65,7 @@ class Creator extends React.Component {
     return (
       <div className="character-display">
         <form id="character-sheet" onSubmit={this.handleSubmit}>
-          <Info info={info} />
+          <Info info={info} handleChange={this.handleInfoChange} />
           <Attributes physical={physical} social={social} mental={mental} onChange={this.handleChange} />
           <Abilities abilities={abilities} onChange={this.handleChange} />
           <Essence essence={essence} onChange={this.handleChange} />
