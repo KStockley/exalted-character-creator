@@ -1,6 +1,8 @@
 // this view/component will display a fresh character sheet in the case of a `new` view
 // or a sheet from the database in the case of a `load` view
 
+//=============================BLOCKS NEEDS TO BE REWORKED============================
+
 import React from 'react';
 import $ from 'jquery';
 import Info from './Info.jsx';
