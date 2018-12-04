@@ -18,7 +18,6 @@ class Creator extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleInfoChange = this.handleInfoChange.bind(this);
-    this.handleAttrChange = this.handleAttrChange.bind(this);
   }
 
   handleSubmit (e) {
@@ -27,34 +26,41 @@ class Creator extends React.Component {
     alert('Character Saved');
   }
 
-  handleChange (e) {
+  handleInfoChange (e) {
     // setState to update changes
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
 
-  handleInfoChange (e) {
+  handleChange(e) {
     // setState to update changes
-    console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: parseInt(e.target.value, 10),
     });
   }
 
-  handleAttrChange(e) {
-    // setState to update changes
-    const subset = e.target.name.split('.')[0];
-    const attr = e.target.name.split('.')[1];
-    this.setState({
-      [subset]: {
-        [attr]: parseInt(e.target.value, 10),
-      }
-    });
-  }
-
   render () {
-    const { physical, social, mental, abilities, essence, health } = this.state;
+    const { abilities, essence, health } = this.state;
+    
+    const physical = {
+      Strength: this.state.Strength,
+      Dexterity: this.state.Dexterity,
+      Stamina: this.state.Stamina,
+    };
+
+    const social = {
+      Charisma: this.state.Charisma,
+      Manipulation: this.state.Manipulation,
+      Appearance: this.state.Appearance,
+    };
+
+    const mental = {
+      Perception: this.state.Perception,
+      Wits: this.state.Wits,
+      Intelligence: this.state.Intelligence,
+    };
+
     const info = {
       name: this.state.name,
       caste: this.state.caste,
@@ -67,20 +73,21 @@ class Creator extends React.Component {
       sta: physical.Stamina,
       man: social.Manipulation,
       wits: mental.Wits,
-      dodge: abilities.Dodge,
-      brawl: abilities.Brawl,
-      martial: abilities['Martial Arts'],
-      melee: abilities.Melee,
-      integrity: abilities.Integrity,
-      socialize: abilities.Socialize,
+      dodge: this.state.Dodge,
+      brawl: this.state.Brawl,
+      martial: this.state['Martial Arts'],
+      melee: this.state.Melee,
+      integrity: this.state.Integrity,
+      socialize: this.state.Socialize,
     };
+    
     console.log(this.state);
 
     return (
       <div className="character-display">
         <form id="character-sheet" onSubmit={this.handleSubmit}>
           <Info info={info} handleChange={this.handleInfoChange} />
-          <Attributes physical={physical} social={social} mental={mental} onChange={this.handleAttrChange} />
+          <Attributes physical={physical} social={social} mental={mental} handleChange={this.handleChange} />
           <Abilities abilities={abilities} onChange={this.handleChange} />
           <Essence essence={essence} onChange={this.handleChange} />
           <Health health={health} onChange={this.handleChange} />

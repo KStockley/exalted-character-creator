@@ -9,11 +9,11 @@ const Subset = (props) => {
     for (let i = 1; i < 6; i += 1) {
       if (props.stats[stat] === i) {
         dots.push(
-          <input type="radio" name={stat} className={props.subset} value={i} key={`${stat}${i}`} defaultChecked />
+          <input type="radio" name={stat} className={props.subset} value={i} key={`${stat}${i}`} onChange={props.handleChange} defaultChecked />
         );
       } else {
         dots.push(
-          <input type="radio" name={stat} className={props.subset} value={i} key={`${stat}${i}`} />
+          <input type="radio" name={stat} className={props.subset} value={i} key={`${stat}${i}`} onChange={props.handleChange} />
         );
       }
     }
@@ -32,6 +32,7 @@ const Subset = (props) => {
 Subset.propTypes = {
   stats: PropTypes.object.isRequired,
   subset: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default Subset;
