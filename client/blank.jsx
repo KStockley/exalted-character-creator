@@ -39,11 +39,9 @@ module.exports = {
   War: 0,
   willpower: 5,
   essence: 1,
-  health: {
-    '-0': 1,
-    '-1': 2,
-    '-2': 2,
-    '-4': 1,
-    incap: 1,
-  },
+  '-0': 1,
+  '-1': 2,
+  '-2': 2,
+  '-4': 1,
+  incap: 1,
 };

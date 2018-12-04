@@ -9,6 +9,7 @@ import Essence from './Essence.jsx';
 import Health from './Health.jsx';
 import Defense from './Defense.jsx';
 import Save from './Save.jsx';
+import blocks from '../blocks.jsx';
 
 class Creator extends React.Component {
   constructor (props) {
@@ -41,44 +42,20 @@ class Creator extends React.Component {
   }
 
   render () {
-    const { abilities, essence, health } = this.state;
-    
-    const physical = {
-      Strength: this.state.Strength,
-      Dexterity: this.state.Dexterity,
-      Stamina: this.state.Stamina,
-    };
-
-    const social = {
-      Charisma: this.state.Charisma,
-      Manipulation: this.state.Manipulation,
-      Appearance: this.state.Appearance,
-    };
-
-    const mental = {
-      Perception: this.state.Perception,
-      Wits: this.state.Wits,
-      Intelligence: this.state.Intelligence,
-    };
-
-    const info = {
-      name: this.state.name,
-      caste: this.state.caste,
-      concept: this.state.concept,
-      supernal: this.state.supernal,
-    };
+    const { physical, social, mental, abilities, info, health } = blocks;
+    const { essence } = this.state;
 
     const defense = {
       dex: physical.Dexterity,
       sta: physical.Stamina,
       man: social.Manipulation,
       wits: mental.Wits,
-      dodge: this.state.Dodge,
-      brawl: this.state.Brawl,
-      martial: this.state['Martial Arts'],
-      melee: this.state.Melee,
-      integrity: this.state.Integrity,
-      socialize: this.state.Socialize,
+      dodge: abilities.Dodge,
+      brawl: abilities.Brawl,
+      martial: abilities['Martial Arts'],
+      melee: abilities.Melee,
+      integrity: abilities.Integrity,
+      socialize: abilities.Socialize,
     };
     
     console.log(this.state);
@@ -88,10 +65,10 @@ class Creator extends React.Component {
         <form id="character-sheet" onSubmit={this.handleSubmit}>
           <Info info={info} handleChange={this.handleInfoChange} />
           <Attributes physical={physical} social={social} mental={mental} handleChange={this.handleChange} />
-          <Abilities abilities={abilities} onChange={this.handleChange} />
-          <Essence essence={essence} onChange={this.handleChange} />
-          <Health health={health} onChange={this.handleChange} />
-          <Defense defense={defense} onChange={this.handleChange} />
+          <Abilities abilities={abilities} handleChange={this.handleChange} />
+          <Essence essence={essence} handleChange={this.handleChange} />
+          <Health health={health} handleChange={this.handleChange} />
+          <Defense defense={defense} handleChange={this.handleChange} />
           <Save />
         </form>
       </div>
