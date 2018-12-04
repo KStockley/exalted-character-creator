@@ -46,16 +46,16 @@ class Creator extends React.Component {
     const { essence } = this.state;
 
     const defense = {
-      dex: physical.Dexterity,
-      sta: physical.Stamina,
-      man: social.Manipulation,
-      wits: mental.Wits,
-      dodge: abilities.Dodge,
-      brawl: abilities.Brawl,
-      martial: abilities['Martial Arts'],
-      melee: abilities.Melee,
-      integrity: abilities.Integrity,
-      socialize: abilities.Socialize,
+      dex: this.state.Dexterity,
+      sta: this.state.Stamina,
+      man: this.state.Manipulation,
+      wits: this.state.Wits,
+      dodge: this.state.Dodge,
+      brawl: this.state.Brawl,
+      martial: this.state['Martial Arts'],
+      melee: this.state.Melee,
+      integrity: this.state.Integrity,
+      socialize: this.state.Socialize,
     };
     
     console.log(this.state);
@@ -68,7 +68,7 @@ class Creator extends React.Component {
           <Abilities abilities={abilities} handleChange={this.handleChange} />
           <Essence essence={essence} handleChange={this.handleChange} />
           <Health health={health} handleChange={this.handleChange} />
-          <Defense defense={defense} handleChange={this.handleChange} />
+          <Defense defense={defense} />
           <Save />
         </form>
       </div>

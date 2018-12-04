@@ -12,21 +12,21 @@ const Essence = (props) => {
     <div className="essence">
       <label>
         Essence Rating:
-        <input type="radio" name="rating" className="rating" value="1" defaultChecked />
-        <input type="radio" name="rating" className="rating" value="2" />
-        <input type="radio" name="rating" className="rating" value="3" />
-        <input type="radio" name="rating" className="rating" value="4" />
-        <input type="radio" name="rating" className="rating" value="5" />
+        <input type="radio" name="essence" className="essence" value="1" onChange={props.handleChange} defaultChecked />
+        <input type="radio" name="essence" className="essence" value="2" onChange={props.handleChange} />
+        <input type="radio" name="essence" className="essence" value="3" onChange={props.handleChange} />
+        <input type="radio" name="essence" className="essence" value="4" onChange={props.handleChange} />
+        <input type="radio" name="essence" className="essence" value="5" onChange={props.handleChange} />
       </label>
       <br />
       <label>
         Personal Motes:
-        <input type="number" name="rating" className="personal" placeholder={personalPool} max={personalPool} min="0" />
+        <input type="number" name="personal" className="personal" placeholder={personalPool} max={personalPool} min="0" />
       </label>
       <br />
       <label>
         Peripheral Motes:
-        <input type="number" name="rating" className="peripheral" placeholder={peripheralPool} max={peripheralPool} min="0" />
+        <input type="number" name="peripheral" className="peripheral" placeholder={peripheralPool} max={peripheralPool} min="0" />
       </label>
     </div>
   );
@@ -34,6 +34,7 @@ const Essence = (props) => {
 
 Essence.propTypes = {
   essence: PropTypes.number.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default Essence;
