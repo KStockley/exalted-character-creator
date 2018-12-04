@@ -74,6 +74,7 @@ class Creator extends React.Component {
       integrity: abilities.Integrity,
       socialize: abilities.Socialize,
     };
+    console.log(this.state);
 
     return (
       <div className="character-display">

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import Subset from './Subset.jsx';
 
 const Attributes = (props) => {
-
   return (
     <div className="attributes">
       <Subset className="physical" subset='physical' stats={props.physical} />
