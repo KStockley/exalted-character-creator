@@ -6,6 +6,7 @@ import Info from './Info.jsx';
 import Attributes from './Attributes.jsx';
 import Abilities from './Abilities.jsx';
 import Essence from './Essence.jsx';
+import Willpower from './Willpower.jsx';
 import Health from './Health.jsx';
 import Defense from './Defense.jsx';
 import Save from './Save.jsx';
@@ -43,7 +44,7 @@ class Creator extends React.Component {
 
   render () {
     const { physical, social, mental, abilities, info, health } = blocks;
-    const { essence } = this.state;
+    const { essence, willpower } = this.state;
 
     const defense = {
       dex: this.state.Dexterity,
@@ -67,6 +68,7 @@ class Creator extends React.Component {
           <Attributes physical={physical} social={social} mental={mental} handleChange={this.handleChange} />
           <Abilities abilities={abilities} handleChange={this.handleChange} />
           <Essence essence={essence} handleChange={this.handleChange} />
+          <Willpower willpower={willpower} handleChange={this.handleChange} />
           <Health health={health} handleChange={this.handleChange} />
           <Defense defense={defense} />
           <Save />

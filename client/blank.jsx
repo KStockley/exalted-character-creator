@@ -16,7 +16,7 @@ module.exports = {
   Athletics: 0,
   Awareness: 0,
   Brawl: 0,
-  Buereacracy: 0,
+  Bureaucracy: 0,
   Craft: 0,
   Dodge: 0,
   Integrity: 0,

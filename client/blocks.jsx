@@ -30,7 +30,7 @@ const abilities = {
   Athletics: blank.Athletics,
   Awareness: blank.Awareness,
   Brawl: blank.Brawl,
-  Buereacracy: blank.Buereacracy,
+  Bureaucracy: blank.Bureaucracy,
   Craft: blank.Craft,
   Dodge: blank.Dodge,
   Integrity: blank.Integrity,

@@ -18,7 +18,7 @@ const charSchema = new mongoose.Schema({
   Athletics: Number,
   Awareness: Number,
   Brawl: Number,
-  Buereacracy: Number,
+  Bureaucracy: Number,
   Craft: Number,
   Dodge: Number,
   Integrity: Number,
