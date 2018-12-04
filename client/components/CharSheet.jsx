@@ -13,7 +13,7 @@ import Willpower from './Willpower.jsx';
 import Health from './Health.jsx';
 import Defense from './Defense.jsx';
 import Save from './Save.jsx';
-import blocks from '../blocks.jsx';
+import blockOut from '../blockOut.jsx';
 
 class CharSheet extends React.Component {
   constructor (props) {
@@ -46,12 +46,8 @@ class CharSheet extends React.Component {
     });
   }
 
-  componentDidMount () {
-    console.log(`Now displaying: ${this.state.name}`);
-  }
-
   render () {
-    const { physical, social, mental, abilities, info, health } = blocks;
+    const { physical, social, mental, abilities, info, health } = blockOut(this.state);
     const { essence, willpower } = this.state;
 
     const defense = {
