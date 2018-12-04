@@ -20,7 +20,7 @@ class CharSheet extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleInfoChange = this.handleInfoChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
   }
 
   handleSubmit (e) {
@@ -30,7 +30,7 @@ class CharSheet extends React.Component {
     });
   }
 
-  handleInfoChange (e) {
+  handleTextChange (e) {
     // setState to update changes
     this.setState({
       [e.target.name]: e.target.value,
@@ -48,6 +48,7 @@ class CharSheet extends React.Component {
     const { physical, social, mental, abilities, info, health } = blockOut(this.state);
     const { essence, willpower } = this.state;
 
+    const castes = ['Dawn', 'Zenith', 'Twilight', 'Night', 'Eclipse'];
     const defense = {
       dex: this.state.Dexterity,
       sta: this.state.Stamina,
@@ -64,7 +65,7 @@ class CharSheet extends React.Component {
     return (
       <div className="character-display">
         <form id="character-sheet" onSubmit={this.handleSubmit}>
-          <Info info={info} handleChange={this.handleInfoChange} />
+          <Info info={info} castes={castes} abilities={abilities} handleChange={this.handleTextChange} />
           <Attributes physical={physical} social={social} mental={mental} handleChange={this.handleChange} />
           <Abilities abilities={abilities} handleChange={this.handleChange} />
           <Essence essence={essence} handleChange={this.handleChange} />
