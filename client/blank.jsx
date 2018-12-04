@@ -1,8 +1,8 @@
 module.exports = {
   name: 'FILL_ME_IN',
-  caste: 'FILL_ME_IN',
+  caste: '',
   concept: 'FILL_ME_IN',
-  supernal: 'FILL_ME_IN',
+  supernal: '',
   Strength: 1,
   Dexterity: 1,
   Stamina: 1,

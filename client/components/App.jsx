@@ -21,10 +21,15 @@ class App extends React.Component {
     if (value === 'load') {
       const character = prompt('Which character would you like to load?');
       $.get(`/exalted/${character}`, (response) => {
-        console.log(response[0]);
+        if(response[0]) {
+          charSheet = response[0];
+        } else {
+          alert(`${character} does not exist, please create them`);
+          charSheet.name = character;
+        }
         this.setState({
           [name]: value,
-          sheet: response[0],
+          sheet: charSheet,
         });
       });
     } else {
